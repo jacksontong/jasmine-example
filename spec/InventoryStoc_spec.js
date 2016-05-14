@@ -1,4 +1,6 @@
 describe('Inventory Stock', function () {
+    var stockinhand_item1;
+    var item1;
     beforeEach(function () {
         stockinhand_item1 = 11;
         item1 = 1;
