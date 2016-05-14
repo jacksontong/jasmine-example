@@ -66,4 +66,59 @@ describe("Jasmine Matchers", function () {
         expect(Myfunction).toBeUndefined();
         expect(strUndefined).toBeUndefined();
     });
+
+    it("toBeNull matcher should be applied successfully to compare against null", function () {
+        var nullValue = null;
+        var valueUndefined;
+        var notNull = "notNull";
+        expect(null).toBeNull();
+        expect(nullValue).toBeNull();
+        expect(valueUndefined).not.toBeNull();
+        expect(notNull).not.toBeNull();
+    });
+
+    it("toBeTruthy matcher should be applied successfully for Boolean casting testing", function () {
+        var MyVar1 = 12, MyVar2 = "True for Non Empty Strings";
+        expect(true).toBeTruthy();
+        expect("Jasmine Cookbook").toBeTruthy();
+        expect(MyVar1).toBeTruthy();
+        expect(MyVar2).toBeTruthy();
+    });
+
+    it("toContain matcher should be applied successfully for finding an item in an Array", function () {
+        var MyArray = ['Jasmine', 'Cookbook', 'Javascript'];
+        expect([1,2,3]).toContain(2);
+        expect([1,2,3]).toContain(2,3);
+        expect(MyArray).toContain('Cookbook');
+        expect([1,2,3]).not.toContain(4);
+        expect(MyArray).not.toContain("Java");
+    });
+
+    it("toBeLessThan matcher should be applied successfully for mathematical comparisons", function () {
+        var pi = 3.1415926, g = 9.71, num1 = 5, num2 = 6;
+        expect(pi).toBeLessThan(g);
+        expect(num1).toBeLessThan(num2);
+        expect(g).not.toBeLessThan(pi);
+        expect(num2).not.toBeLessThan(num1);
+    });
+
+    it("toBeGreaterThan", function () {
+        var pi = 3.1415926, g = 9.71, num1 = 5, num2 = 6;
+        expect(g).toBeGreaterThan(pi);
+        expect(num2).toBeGreaterThan(num1);
+        expect(pi).not.toBeGreaterThan(g);
+        expect(num1).not.toBeGreaterThan(num2);
+    });
+
+    it("toBeCloseTo matcher should be applied for precision math comparison", function () {
+        var pi = 3.1415926, e = 2.78;
+        expect(pi).not.toBeCloseTo(e);
+        expect(pi).toBeCloseTo(e,0);
+        expect(4.334).toBeCloseTo(4.334);
+        expect(4.334).toBeCloseTo(4.3345,1);
+        expect(4.334).toBeCloseTo(4.3345,2);
+        expect(4.334).not.toBeCloseTo(4.3,2);
+        expect(4.334).not.toBeCloseTo(4.22,3);
+        expect(4.334).not.toBeCloseTo(4.22,4);
+    });
 });
