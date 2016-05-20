@@ -1,31 +1,40 @@
 describe('<ABC> Money Exchange Company: Currency Converter Module', function () {
     describe('When Convert Currency Across Region: ', function () {
-        xit('Verify that Indian Rupees (INR) converted to Us Dollars (USD)', function () {
-
+        it('Verify that Indian Rupees (INR) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(60, "INR", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(1.002);
         });
-        xit('Verify that Indian Rupees (INR) converted to Japanese Yen (JPY)', function () {
-
+        it('Verify that Indian Rupees (INR) converted to Japanese Yen (JPY)', function () {
+            var myCurrency = new CurrencyConverter(1, "INR", 'JPY');
+            expect(myCurrency.convertedCurrency()).toEqual(1.7756);
         });
-        xit('Verify that Hong Kong Dollars (HKD) converted to Us Dollars (USD)', function () {
-
+        it('Verify that Hong Kong Dollars (HKD) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(1, "HKD", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(0.1289);
         });
-        xit('Verify that Japanese Yen (JPY) converted to Us Dollars (USD)', function () {
-
+        it('Verify that Japanese Yen (JPY) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(1, "JPY", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(0.54);
         });
-        xit('Verify that UAE Dirham (AED) converted to Us Dollars (USD)', function () {
-
+        it('Verify that UAE Dirham (AED) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(1, "AED", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(0.27);
         });
-        xit('Verify that British Pound Sterling converted to Us Dollars (USD)', function () {
-
+        it('Verify that British Pound Sterling (GBP) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(1, "GBP", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(1.60);
         });
-        xit('Verify that South African Rand (ZAR) converted to Us Dollars (USD)', function () {
-
+        it('Verify that South African Rand (ZAR) converted to Us Dollars (USD)', function () {
+            var myCurrency = new CurrencyConverter(1, "ZAR", 'USD');
+            expect(myCurrency.convertedCurrency()).toEqual(5.560);
         });
-        xit('Verify that Us Dollars (USD) converted to Hong Kong Dollars (HKD)', function () {
-
+        it('Verify that Us Dollars (USD) converted to Hong Kong Dollars (HKD)', function () {
+            var myCurrency = new CurrencyConverter(1, "USD", 'HKD');
+            expect(myCurrency.convertedCurrency()).toEqual(7.750);
         });
-        xit('Verify that Us Dollars (USD) converted to Japanese Yen (JPY)', function () {
-
+        it('Verify that Us Dollars (USD) converted to Japanese Yen (JPY)', function () {
+            var myCurrency = new CurrencyConverter(1, "USD", 'JPY');
+            expect(myCurrency.convertedCurrency()).toEqual(112.81);
         });
     });
 });
