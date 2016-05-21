@@ -15,6 +15,17 @@ var Person2 = function (name, DOB, bloddgroup, donor_receiver) {
 
         return this.checkHIV(this.myName, this.myDOB, this.myBloodGroup);
     };
+    this.ValidateBloodGroup = function (callback) {
+        var _this = this;
+        var matchBloodGroup;
+        this.MatchBloodGroupToGiveReceive(function (personBloodGroup) {
+            _this.personBloodGroup = personBloodGroup;
+            matchBloodGroup = personBloodGroup;
+            callback.call(_this, _this.personBloodGroup);
+        });
+
+        return matchBloodGroup;
+    }
 };
 Person2.prototype.getAge = function (birth) {
     console.log('getAge() function is called');
@@ -37,6 +48,20 @@ Person2.prototype.checkHIV = function (pName, pDOB, pBloodGroup) {
     }
 
     return bolHIVResult;
+};
+Person2.prototype.MatchBloodGroupToGiveReceive = function (callback) {
+    var matchBloodGroup;
+    if (this.donor_receiver == null || this.donor_receiver == undefined) {
+        throw new ValidationError("Argument (donor_receiver) is missing");
+    }
+    if (this.myBloodGroup == "O+" && this.donor_receiver.toUpperCase() == "RECEIVER") {
+        matchBloodGroup = ['O+'];
+    } else if (this.myBloodGroup == 'O+' && this.donor_receiver.toUpperCase() == 'DONOR') {
+        matchBloodGroup = ['A+'];
+    } else if (this.myBloodGroup == "B-" && this.donor_receiver.toUpperCase() == "RECEIVER") {
+        matchBloodGroup = ['B-', 'O-'];
+    }
+    callback.call(this, matchBloodGroup);
 };
 //Define ValidationError(message)
 function ValidationError(message) {
