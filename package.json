@@ -1,13 +1,13 @@
 {
   "name": "jasmine-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "My first jasmine BDD test",
   "main": "index.js",
   "scripts": {
     "test": "karma start --single-run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jackson Tong <jackson@snapfrozen.com.au>",
   "license": "ISC",
   "devDependencies": {
     "jasmine": "^2.4.1",
@@ -15,5 +15,9 @@
     "karma-coverage": "^1.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs2-launcher": "^0.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tongtoanbs/jasmine-example.git"
   }
 }
