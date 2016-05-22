@@ -15,14 +15,14 @@ describe('<XYZ> Company: Online Order Module', function () {
             expect(myPerson).toContainFirstAndLastName();
         });
         //Scenario 3
-        xdescribe('Given: Age is not a criteria to place online order', function () {
+        describe('Given: Age is not a criteria to place online order', function () {
             it('Age should be greater than or equal to 21 years', function () {
                 var myPerson = new Person(25, 'James', 'Smith');
                 expect(myPerson.age).toBeOlderThan(20);
             });
         });
         //Scenario 4
-        xit("First Name and Last Name are required to place the online order", function () {
+        it("First Name and Last Name are required to place the online order", function () {
             var myPerson = new Person(23, 'James', 'Smith');
             expect(myPerson).toContainFirstAndLastName();
         });

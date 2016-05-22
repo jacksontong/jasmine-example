@@ -50,19 +50,5 @@ describe("Employees of <XYZ> Company:", function () {
                 expect(myTaxableIncome.calculateTDS()).toEqual(90000);
             });
         });
-        describe('Tax deducted for United Kingdom Employees', function () {
-
-            xit('Should be deducted 20% if Gross Annual Income is between £10,000/- and £32,000', function () {
-
-            });
-        });
-        describe('Tax deducted for United States Employees', function () {
-            xit('Should be deducted 35% of Gross Taxable Income if employee status is SINGLE', function () {
-
-            });
-            xit('Should be deducted 30% of Gross Taxable Income if employee status is MARRIED', function () {
-
-            });
-        });
     });
 });
